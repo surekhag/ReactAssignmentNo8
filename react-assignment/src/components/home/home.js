@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter ,Redirect,Route, Link } from "react-router-dom";
 import SignIn from '../login/login'
-import Navigation from '../navigation/navigation';
 import dashboard from '../dashboard/dashboard'
 
 const HomeModule = () => {
     return (
       <div>
-        <BrowserRouter>
-          <Navigation />
+        <BrowserRouter>          
           <Route exact path="/" component={() => <Redirect to="/login" />} />
           <Route exact path="/login" component={SignIn} />
           <Route path="/dashboard" component={dashboard} />        

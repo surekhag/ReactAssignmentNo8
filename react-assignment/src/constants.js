@@ -1,0 +1,3 @@
+const SET_USERS_DATA = 'SET_USERS_DATA';
+
+export { SET_USERS_DATA };
