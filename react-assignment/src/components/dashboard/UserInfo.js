@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 // import  Container from '@material-ui/core';
-import {Container, Grid, TextField, Typography} from '@material-ui/core';
+import {Container, Grid, Button , Typography} from '@material-ui/core';
 import Title from './Title';
 import Select from 'react-select'
 
@@ -50,23 +50,36 @@ export default function Deposits() {
     <div>Your role is</div>
 
 <form className={classes.root} noValidate autoComplete="off">
-<label for="my-input">Objective</label>  
-<input id="outlined-basic" label="Objective" variant="outlined" /> <br /> <br />
-
-<label for="my-input">Weightage</label>
-<input id="outlined-basic" label="Weightage" variant="outlined" /><br /> <br />
- Key Results : 
- <Select options={ratingOptions}/>
-
- Rating : 
- {/* <Select  options={ratingOptions}/> */}
-{/* <Select
-        // value={selectedOption}
-        // onChange={this.handleChange}
-        options={options}
-      /> */}
-Comments : 
-<textarea></textarea>
+  <table>   
+    <tr>
+<th>Objective</th> <td><input id="outlined-basic" label="Objective" variant="outlined" />
+</td>
+    </tr>
+    <tr>
+<th>Weightage</th> <td><input id="outlined-basic" label="Weightage" variant="outlined" /></td>
+    </tr>
+    <tr>
+<th>Key Results  </th> <td><Select options={ratingOptions}/></td>
+    </tr>
+    <tr>
+<th>Rating  </th> <td><Select  options={ratingOptions}/> </td>
+    </tr>
+    <tr>
+<th>Comments</th> <td><textarea></textarea></td>
+    </tr>   
+  </table>
+<table>
+<tr>
+<th>General Comments</th> <td><textarea></textarea></td>
+    </tr>
+    <tr>
+      <Button variant="contained" color="primary">Submit</Button >
+      <Button variant="contained" color="primary">Preview</Button >   
+      <br/> <br/>
+ </tr>
+</table>
+   
+  
 </form>
          
     </Container>
