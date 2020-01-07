@@ -10,16 +10,17 @@ const initState = {
 };
 
 const rootReducer = (state = initState, action) => {
-  console.log("in reducer", action);
   switch (action.type) {
-    case SET_USERS_DATA:
+    case SET_USERS_DATA:     
+      const result = JSON.parse(action.data);      
       return {
         ...state,       
-    //     userid: '',
-    // name: "",
-    // role: "",
-    // manager_id: '',
-    // manager_name: ""
+        userid: result.data.userid,
+        name: result.data.name,
+        role: result.data.role,
+        manager_id: result.data.manager_id,
+        manager_name: result.data.manager_name,
+        status : result.status
       };
       
     default:

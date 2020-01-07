@@ -1,7 +1,12 @@
-import { SET_USERS_DATA } from '../constants';
+import { SIGN_IN_TO_SITE, SET_USERS_DATA } from '../constants';
 
-export const setUserData = (email, password) => {
-    console.log("in action", email, password);
-  return { type: SET_USERS_DATA, 
+export const signInToSite = (email, password) => {    
+  return { type: SIGN_IN_TO_SITE, 
     payload :{emailData: email, passwordData : password} };
+};
+
+
+export const setUserData = (data) => {    
+  return { type: SET_USERS_DATA, 
+   data };
 };

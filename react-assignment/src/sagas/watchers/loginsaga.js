@@ -1,19 +1,17 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 
-import { SET_USERS_DATA } from '../../constants';
+import { SET_USERS_DATA, SIGN_IN_TO_SITE } from '../../constants';
 
 import {setUserData} from '../../actions/action';
 import {loginToSiteApi} from '../../apis/api';
 
 
 
-function* workerLoginSaga(data) {
-    console.log("in saga");
-    try {
-        console.log(loginToSiteApi);
+function* workerLoginSaga(data) {    
+    try {        
       const response = yield call(loginToSiteApi, data);
-      console.log(response.data);
-      yield put(setUserData(response.status));
+      console.log(response.request.response);
+      yield put(setUserData(response.request.response));
     } catch (err) {
       if (err.response && err.response.data) {
         // const errorData = err.response.data;
@@ -22,10 +20,9 @@ function* workerLoginSaga(data) {
     }
   }
   
-  export default function* watchLoginSaga() {
-    console.log("in saga");
+  export default function* watchLoginSaga() {    
     yield takeLatest(
-        SET_USERS_DATA,
+        SIGN_IN_TO_SITE,
         workerLoginSaga
     );
   }
