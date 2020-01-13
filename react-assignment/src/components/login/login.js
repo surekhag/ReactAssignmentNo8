@@ -4,25 +4,11 @@ import {signInToSite} from '../../actions/action';
 import SignIn from './loginUI'
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
-class login extends Component{   
-    state = {
-        redirect: false
-      }
-
+class login extends Component{
     signInToSite=(email, password)=>{ 
     this.props.signInToSite(email, password);
     }
 
-    static getDerivedStateFromProps(props, state) {        
-        if(props.loginStatus){
-            return {
-                ...state,
-                redirect: props.loginStatus
-            }
-        }
-        else 
-        return state;
-    }   
     render() {
         if(this.props.loginStatus && this.props.loginStatus == 'success'){
             return ( <Redirect to="/dashboard" />);
@@ -32,8 +18,7 @@ class login extends Component{
                 <SignIn login={this.signInToSite}/>
                 </>
               ); 
-        }
-       
+        }       
     }
 }
 

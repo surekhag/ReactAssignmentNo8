@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Container, Grid, Button , Typography} from '@material-ui/core';
 import Title from './Title';
 import Select from 'react-select'
+// import Select from '@material-ui/core/Select';
 
 function preventDefault(event) {
   event.preventDefault();
@@ -32,11 +33,6 @@ const keyResults = [
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
   ];
-
-//   const MyComponent = () => (
-//     <Select options={options} />
-//   )
-  
 
 export default function Deposits() {
   const classes = useStyles();
@@ -86,6 +82,3 @@ export default function Deposits() {
     </React.Fragment>
   );
 }
-
-
-
