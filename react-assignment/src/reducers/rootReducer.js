@@ -12,7 +12,7 @@ const initState = {
 const rootReducer = (state = initState, action) => {
   switch (action.type) {
     case SET_USERS_DATA:     
-      const result = JSON.parse(action.data);      
+      const result = JSON.parse(action.data);
       return {
         ...state,       
         userid: result.data.userid,
@@ -22,7 +22,6 @@ const rootReducer = (state = initState, action) => {
         manager_name: result.data.manager_name,
         status : result.status
       };
-      
     default:
       return state;
   }

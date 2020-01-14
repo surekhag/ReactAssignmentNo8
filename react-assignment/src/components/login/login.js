@@ -5,10 +5,14 @@ import SignIn from './loginUI'
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
 class login extends Component{
-    signInToSite=(email, password)=>{ 
+    signInToSite=(email, password)=>{
     this.props.signInToSite(email, password);
     }
 
+    static getDerivedStateFromProps(props, state){
+      console.log(props);
+    }
+    
     render() {
         if(this.props.loginStatus && this.props.loginStatus == 'success'){
             return ( <Redirect to="/dashboard" />);
@@ -23,7 +27,8 @@ class login extends Component{
 }
 
 const mapStateToProps = (state) => ({
-    loginStatus: state.status    
+    loginStatus: state.status,
+    data : state    
   });
   const mapDispatchToProps = (dispatch) => ({
     signInToSite: (email, password) =>

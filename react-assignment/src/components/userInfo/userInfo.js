@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Container, Grid, Button , Typography} from '@material-ui/core';
 import Select from 'react-select'
-import { makeStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
+// import { makeStyles } from '@material-ui/core/styles';
+// import { red } from '@material-ui/core/colors';
 
 const ratingOptions = [
   {value:11, label : 11 },
@@ -22,13 +22,13 @@ const keyResults = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    color: red,
-  }}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     display: 'flex',
+//     color: red,
+//   }}));
 
-  export default function userInfo() {
+ function userInfo() {
     // const classes = useStyles();
   return (
     <React.Fragment>
@@ -71,8 +71,9 @@ const useStyles = makeStyles(theme => ({
    
   
 </form>
-         
     </Container>
     </React.Fragment>
   );
 }
+
+export default userInfo;
