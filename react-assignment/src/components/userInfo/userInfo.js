@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import {Container, Grid, Button , Typography} from '@material-ui/core';
 import Select from 'react-select'
-// import { makeStyles } from '@material-ui/core/styles';
-// import { red } from '@material-ui/core/colors';
+import { makeStyles } from '@material-ui/core/styles';
+import { red } from '@material-ui/core/colors';
+
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     display: 'flex',
+//     color: red,
+//   }}));
 
 const ratingOptions = [
   {value:11, label : 11 },
@@ -22,22 +28,18 @@ const keyResults = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     display: 'flex',
-//     color: red,
-//   }}));
-
- function userInfo() {
+ function userInfo(props) {
+  
     // const classes = useStyles();
+    console.log(props);
   return (
     <React.Fragment>
-    <h1>User Details</h1>
+    <h1>User Details </h1> here
     <Container>      
     <Typography component="h1" variant="h6" color="inherit" noWrap>
     Hi User
     </Typography>
-    <div >Your role is</div>
+  <div >Your role is {props.location.data}</div>
 
 <form noValidate autoComplete="off">
   <table>   

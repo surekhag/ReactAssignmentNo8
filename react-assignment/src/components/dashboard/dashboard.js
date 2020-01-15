@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
+import { Link as LinkToUser } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -117,7 +118,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -166,6 +167,16 @@ export default function Dashboard() {
         </div>
         <Divider />
         <List>{mainListItems}</List>
+
+        <LinkToUser
+    to={{
+      pathname: "/userInfo",
+      state: {
+       data: props.location.state.data }
+   }}>
+    Appraisal Form
+</LinkToUser>
+
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>

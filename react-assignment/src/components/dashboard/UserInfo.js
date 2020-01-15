@@ -34,7 +34,7 @@ const keyResults = [
     { value: 'vanilla', label: 'Vanilla' },
   ];
 
-export default function Deposits() {
+export default function UserInfo(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -43,7 +43,7 @@ export default function Deposits() {
     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
     Hi User
     </Typography>
-    <div>Your role is</div>
+  <div>Your role is {props.location.state.data.role}</div>
 
 <form className={classes.root} noValidate autoComplete="off">
   <table>   

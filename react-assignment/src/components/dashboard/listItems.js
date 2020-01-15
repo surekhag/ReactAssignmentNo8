@@ -47,8 +47,6 @@ export const mainListItems = (
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      {/* <a href="#">  <ListItemText primary="Appraisal Form" /></a> */}
-      <Link to="/userInfo"><ListItemText primary="Appraisal Form" /></Link>
     </ListItem>
   </div>
 );
